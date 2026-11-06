@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DENOV ECO GARDEN | Yashillik bag'ridagi yangi hayot</title>
+<meta name="description" content="DENOV ECO GARDEN — Denov tumani, Lochin MFY, U.Nosir ko'chasida qad ko'tarayotgan 1500 xonadonli standart klassdagi zamonaviy turar-joy majmuasi.">
+<link rel="icon" href="images/favicon-green.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --dark:#143D32;
+    --green:#5B7F5A;
+    --beige:#D7BD93;
+    --cream:#E9E2D3;
+    --accent:#342C28;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Plus Jakarta Sans',sans-serif;
+    color:var(--accent);
+    background:var(--cream);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;letter-spacing:.02em;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.75rem;
+    font-weight:600;
+    color:var(--green);
+  }
+  .eyebrow.on-dark{color:var(--beige);}
+  .btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:600;
+    font-size:.95rem;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    border:2px solid transparent;
+    cursor:pointer;
+    overflow:hidden;
+  }
+  .btn .ic{transition:transform .35s ease;}
+  .btn:hover .ic{transform:translateX(3px) rotate(2deg);}
+  .btn:active{transform:scale(.96);}
+  .btn-primary{
+    background:var(--dark);color:#fff;
+    box-shadow:0 8px 24px rgba(20,61,50,.35);
+    animation:btnGlow 2.6s ease-in-out infinite;
+  }
+  .btn-primary:hover{
+    background:#1d5443;
+    transform:translateY(-3px);
+    box-shadow:0 14px 32px rgba(20,61,50,.5);
+    animation-play-state:paused;
+  }
+  @keyframes btnGlow{
+    0%,100%{box-shadow:0 8px 24px rgba(20,61,50,.35);}
+    50%{box-shadow:0 8px 28px rgba(20,61,50,.6), 0 0 0 4px rgba(20,61,50,.08);}
+  }
+  .btn-outline{
+    border-color:rgba(255,255,255,.3);color:#fff;
+    background:rgba(255,255,255,.07);
+    backdrop-filter:blur(8px);
+    padding-left:10px;
+  }
+  .btn-outline:hover{border-color:transparent;transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.3);}
+  .btn-outline .ic-chip{
+    width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.14);
+    display:inline-flex;align-items:center;justify-content:center;
+    animation:chipPulse 2.8s ease-in-out infinite;transition:background .3s ease;
+  }
+  .btn-outline:hover .ic-chip{background:rgba(255,255,255,.28);}
+  @keyframes chipPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.14);}}
+  .btn-instagram:hover{background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);}
+  .btn-telegram:hover{background:#229ED9;}
+  .btn-outline.dark{border-color:var(--dark);color:var(--dark);background:transparent;}
+  .btn-outline.dark:hover{background:var(--dark);color:#fff;transform:translateY(-3px);}
+
+  /* HEADER */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 0;
+    transition:background .3s ease, padding .3s ease;
+  }
+  header.scrolled{background:var(--dark);padding:12px 0;box-shadow:0 6px 24px rgba(0,0,0,.15);}
+  header .container{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;}
+  .logo-badge{background:var(--dark);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:7px;}
+  .brand .logo-badge{width:38px;height:38px;}
+  .brand .logo-badge img{width:100%;height:100%;object-fit:contain;}
+  .brand span{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.04em;}
+  #siteNavDesktop ul{list-style:none;display:flex;gap:28px;}
+  #siteNavDesktop a{color:#fff;font-size:.92rem;font-weight:500;opacity:.9;white-space:nowrap;display:flex;align-items:center;gap:10px;}
+  #siteNavDesktop a:hover{opacity:1;}
+  #siteNav{display:none;}
+  .header-cta{display:flex;align-items:center;gap:18px;}
+  .header-phone{color:#fff;font-weight:600;font-size:.92rem;display:flex;align-items:center;gap:8px;transition:color .25s ease,transform .25s ease;}
+  .header-phone:hover{transform:translateY(-2px);}
+  a.header-phone[title="Telegram kanal"]:hover{color:#54c4f0;}
+  .nav-toggle{
+    display:none;position:relative;background:none;border:none;color:#fff;cursor:pointer;
+    width:38px;height:38px;align-items:center;justify-content:center;
+    border-radius:50%;flex-shrink:0;transition:background .2s ease;
+  }
+  .nav-toggle:hover,.nav-toggle:active{background:rgba(255,255,255,.1);}
+  .nav-toggle .ic{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    transition:opacity .25s ease, transform .35s ease;
+  }
+  .nav-toggle .icon-close{opacity:0;transform:translate(-50%,-50%) rotate(-90deg) scale(.4);}
+  .nav-toggle.is-open .icon-menu{opacity:0;transform:translate(-50%,-50%) rotate(90deg) scale(.4);}
+  .nav-toggle.is-open .icon-close{opacity:1;transform:translate(-50%,-50%) rotate(0) scale(1);}
+  .nav-backdrop{
+    position:fixed;inset:0;z-index:98;background:rgba(5,13,11,.55);backdrop-filter:blur(2px);
+    opacity:0;pointer-events:none;transition:opacity .35s ease;
+  }
+  .nav-backdrop.show{opacity:1;pointer-events:auto;}
+
+  /* ICONS */
+  .ic{display:inline-block;vertical-align:middle;flex-shrink:0;}
+  .hero-tags span{display:inline-flex;align-items:center;gap:8px;}
+  .btn .ic{color:inherit;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    color:#fff;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;}
+  .hero-bg::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(6,16,13,.82) 0%, rgba(6,16,13,.68) 40%, rgba(5,13,11,.92) 100%);
+  }
+  .hero-content{position:relative;z-index:1;padding-top:80px;}
+  .hero h1{
+    font-size:clamp(3rem,9vw,6.5rem);
+    font-weight:800;
+    line-height:.98;
+    text-transform:uppercase;
+    margin:18px 0 22px;
+  }
+  .hero-divider{width:90px;height:3px;background:var(--beige);margin-bottom:22px;}
+  .hero p.lead{
+    font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:600;max-width:560px;color:#fff;margin-bottom:34px;
+    text-shadow:0 2px 18px rgba(0,0,0,.65), 0 1px 3px rgba(0,0,0,.9);
+    -webkit-text-stroke:.3px rgba(0,0,0,.18);
+  }
+  .hero-tags{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+  .hero-tags span{
+    border:1px solid rgba(255,255,255,.35);
+    padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:600;letter-spacing:.04em;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .scroll-cue{
+    position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+    z-index:1;color:#fff;opacity:.7;font-size:.8rem;display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .scroll-cue .line{width:1px;height:36px;background:#fff;animation:scrolldown 1.8s infinite;}
+  @keyframes scrolldown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}50.1%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+  /* ABOUT / LOCATION */
+  .about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .about h2{font-size:clamp(2rem,3.6vw,2.8rem);color:var(--dark);margin:14px 0 20px;font-weight:700;}
+  .about p{color:#4a443f;margin-bottom:16px;font-size:1.02rem;}
+  .landmark-card{
+    background:#fff;border-left:4px solid var(--green);border-radius:10px;
+    padding:20px 24px;margin-top:22px;box-shadow:0 10px 30px rgba(20,61,50,.07);
+  }
+  .landmark-card b{color:var(--dark);}
+  .about-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(20,61,50,.18);}
+
+  /* STATS STRIP */
+  .stats{background:var(--dark);color:#fff;padding:56px 0;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+  .stats-grid .num{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;color:var(--beige);}
+  .stats-grid .lbl{font-size:.85rem;opacity:.85;margin-top:6px;letter-spacing:.03em;}
+
+  /* QUALITY / WHY */
+  .quality{background:#fff;}
+  .section-head{max-width:640px;margin:0 auto 56px;text-align:center;}
+  .section-head h2{font-size:clamp(2rem,3.6vw,2.8rem);color:var(--dark);margin:14px 0;font-weight:700;}
+  .section-head p{color:#555;}
+  .grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .card{
+    background:var(--cream);border-radius:16px;padding:34px 28px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(20,61,50,.12);}
+  .card .icon{
+    width:52px;height:52px;border-radius:14px;background:var(--dark);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    color:var(--beige);
+  }
+  .card h3{color:var(--dark);font-size:1.12rem;margin-bottom:10px;font-weight:700;}
+  .card p{color:#5a554f;font-size:.93rem;}
+
+  /* AMENITIES w/ image */
+  .amenities{background:var(--dark);color:#fff;}
+  .amenities .section-head h2{color:#fff;}
+  .amenities .section-head p{color:var(--cream);}
+  .amen-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;}
+  .amen-list{display:flex;flex-direction:column;gap:22px;}
+  .amen-item{display:flex;gap:18px;align-items:flex-start;}
+  .amen-item .dot{
+    width:44px;min-width:44px;height:44px;border-radius:50%;
+    background:rgba(215,189,147,.15);border:1px solid var(--beige);
+    display:flex;align-items:center;justify-content:center;color:var(--beige);
+  }
+  .amen-item h4{font-size:1.05rem;margin-bottom:4px;color:var(--beige);}
+  .amen-item p{font-size:.92rem;color:var(--cream);opacity:.9;}
+  .amen-img{border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);}
+
+  /* TIMELINE */
+  .timeline{background:var(--cream);}
+  .tl-wrap{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap;}
+  .tl-box{
+    background:#fff;border-radius:18px;padding:40px 52px;text-align:center;
+    box-shadow:0 20px 50px rgba(20,61,50,.1);
+  }
+  .tl-box .big{font-family:'Poppins',sans-serif;font-weight:800;font-size:3.4rem;color:var(--dark);}
+  .tl-box .big span{color:var(--green);font-size:1.6rem;}
+  .tl-box .cap{margin-top:8px;color:#555;font-size:.95rem;}
+
+  /* GALLERY */
+  .gallery{background:#fff;}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .gal-grid a{border-radius:14px;overflow:hidden;position:relative;display:block;aspect-ratio:4/3;}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .gal-grid a:hover img{transform:scale(1.08);}
+  .gal-grid a::after{
+    content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%, rgba(20,61,50,.55));
+    opacity:0;transition:opacity .3s ease;
+  }
+  .gal-grid a:hover::after{opacity:1;}
+
+  /* CTA / CONTACT */
+  .cta{
+    position:relative;color:#fff;overflow:hidden;
+  }
+  .cta-bg{position:absolute;inset:0;}
+  .cta-bg img{width:100%;height:100%;object-fit:cover;}
+  .cta-bg::after{content:'';position:absolute;inset:0;background:rgba(6,16,13,.9);}
+  .cta-inner{position:relative;z-index:1;text-align:center;max-width:680px;margin:0 auto;}
+  .cta h2{font-size:clamp(2rem,4vw,3rem);margin:16px 0 18px;font-weight:700;}
+  .cta p{color:var(--cream);margin-bottom:36px;font-size:1.05rem;}
+  .cta-actions{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+  .contact-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;
+  }
+  .contact-grid .box{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:14px;padding:22px;
+  }
+  .contact-grid .box .lbl{font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:var(--beige);margin-bottom:8px;}
+  .contact-grid .box .val{font-weight:600;font-size:1rem;}
+
+  footer{background:var(--accent);color:var(--cream);padding:30px 0;font-size:.85rem;}
+  footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  footer .f-brand{display:flex;align-items:center;gap:10px;font-weight:700;color:#fff;}
+  footer .f-brand .logo-badge{width:26px;height:26px;padding:5px;border-radius:7px;}
+  footer .f-brand .logo-badge img{width:100%;height:100%;object-fit:contain;}
+
+  /* floating call button */
+  .float-call{
+    position:fixed;bottom:24px;right:24px;z-index:90;
+    background:var(--dark);color:#fff;width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 28px rgba(0,0,0,.3);
+    animation:pulse 2.4s infinite;
+    transition:transform .25s ease, background .25s ease;
+  }
+  .float-call:hover{background:#1d5443;transform:scale(1.08);}
+  .float-call:active{transform:scale(.95);}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(20,61,50,.55);}70%{box-shadow:0 0 0 18px rgba(20,61,50,0);}100%{box-shadow:0 0 0 0 rgba(20,61,50,0);}}
+
+  @media(max-width:1300px){
+    #siteNavDesktop{display:none;}
+    #siteNav{
+      position:fixed;top:0;right:0;height:100vh;width:300px;max-width:84vw;
+      background:linear-gradient(180deg,#143D32 0%,#0e2b23 100%);
+      display:flex;flex-direction:column;
+      transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+      padding:84px 0 28px;z-index:99;box-shadow:-20px 0 50px rgba(0,0,0,.35);
+    }
+    #siteNav.open{transform:translateX(0);}
+    #siteNav ul{list-style:none;flex-direction:column;gap:0;flex:1;overflow-y:auto;}
+    #siteNav li{border-bottom:1px solid rgba(255,255,255,.08);}
+    #siteNav li:first-child{border-top:1px solid rgba(255,255,255,.08);}
+    #siteNav a{
+      color:#fff;display:flex;align-items:center;gap:14px;
+      white-space:normal;font-size:1rem;font-weight:500;opacity:.85;
+      padding:17px 28px;transition:background .2s ease,opacity .2s ease,padding-left .2s ease;
+    }
+    #siteNav a:hover,#siteNav a:active{opacity:1;background:rgba(255,255,255,.06);padding-left:32px;}
+    .nav-ic{display:inline-flex;color:var(--beige);opacity:.9;}
+    .nav-ic,.nav-chevron{display:inline-flex;}
+    #siteNav a span{flex:1;}
+    .nav-chevron{color:rgba(255,255,255,.35);}
+    .nav-foot{display:block;padding:22px 28px 0;margin-top:4px;}
+    .nav-toggle{display:flex;}
+    .header-cta a.header-phone[title="Telegram kanal"]{display:none;}
+  }
+  @media(max-width:720px){
+    .header-phone{display:none;}
+  }
+  @media(max-width:900px){
+    .about-grid,.amen-wrap{grid-template-columns:1fr;}
+    .about-grid .about-img{order:-1;}
+    .grid-cards{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:28px;}
+    .gal-grid{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    section{padding:64px 0;}
+    .grid-cards{grid-template-columns:1fr;}
+    .gal-grid{grid-template-columns:1fr;}
+    .tl-box{padding:30px 34px;}
+  }
+
+  @media(max-width:560px){
+    /* tighter, bolder buttons — less padding, bigger legible text */
+    .btn{padding:12px 20px;font-size:1.02rem;gap:8px;border-radius:40px;}
+    .btn .ic{width:17px;height:17px;}
+    .btn-outline{padding-left:8px;}
+    .btn-outline .ic-chip{width:28px;height:28px;}
+    .hero-actions{gap:10px;}
+    .cta-actions{gap:10px;}
+    .hero-tags span{padding:7px 14px;font-size:.8rem;}
+  }
+
+  @media(max-width:480px){
+    /* header: collapse brand + CTA so nothing wraps to a second line */
+    header{padding:12px 0;}
+    .brand{gap:8px;}
+    .brand .logo-badge{width:32px;height:32px;padding:6px;}
+    .brand span{font-size:.82rem;letter-spacing:.02em;white-space:nowrap;}
+    .header-cta{gap:8px;}
+    .header-cta .btn-primary{
+      padding:0;width:40px;height:40px;border-radius:50%;
+      justify-content:center;flex-shrink:0;
+    }
+    .header-cta .btn-primary .btn-label{display:none;}
+    .header-cta .btn-primary .ic{width:17px;height:17px;}
+    .nav-toggle{width:34px;height:34px;}
+  }
+</style>
+</head>
+<body>
+
+<svg aria-hidden="true" style="display:none">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z"/>
+      <circle cx="12" cy="10" r="2.3"/>
+    </symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 21V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v16"/>
+      <path d="M13 21V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11"/>
+      <path d="M8 7h1M8 10.5h1M8 14h1M8 17.5h1M16 12.5h1M16 16h1"/>
+      <path d="M3 21h18"/>
+    </symbol>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 16V11.5a1 1 0 0 1 .25-.66l2-2.3A2 2 0 0 1 7.76 8h8.48a2 2 0 0 1 1.51 1.04l2 2.3c.16.19.25.42.25.66V16"/>
+      <path d="M3.5 16h17"/>
+      <path d="M4 16v1.6A1 1 0 0 0 5 18.6h.6A1 1 0 0 0 6.6 17.6V16"/>
+      <path d="M17.4 16v1.6a1 1 0 0 0 1 1h.6a1 1 0 0 0 1-1V16"/>
+      <circle cx="7.5" cy="15.6" r="1.3"/>
+      <circle cx="16.5" cy="15.6" r="1.3"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15" rx="2"/>
+      <path d="M3.5 9.5h17"/>
+      <path d="M8 3v4M16 3v4"/>
+    </symbol>
+    <symbol id="i-calendar-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15" rx="2"/>
+      <path d="M3.5 9.5h17"/>
+      <path d="M8 3v4M16 3v4"/>
+      <path d="M8.3 14.3l2 2 4.4-4.4"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.6 10.8c1.3 2.7 3.6 5 6.3 6.3l2.1-2.1a1.2 1.2 0 0 1 1.2-.3c1.2.4 2.5.6 3.8.6A1.2 1.2 0 0 1 21.2 16.5V20a1.2 1.2 0 0 1-1.2 1.2C10.9 21.2 2.8 13.1 2.8 4.2A1.2 1.2 0 0 1 4 3h3.5a1.2 1.2 0 0 1 1.2 1.2c0 1.3.2 2.6.6 3.8a1.2 1.2 0 0 1-.3 1.2L6.6 10.8z"/>
+    </symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M14.8 9.2l-1.6 4.4-4.4 1.6 1.6-4.4z"/>
+    </symbol>
+    <symbol id="i-crane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 21V6l5-3"/>
+      <path d="M10 3h9"/>
+      <path d="M17 3v4.2"/>
+      <path d="M10 7.2h8"/>
+      <path d="M14.3 7.2v3.6l-2 3.6"/>
+      <path d="M3 21h11"/>
+    </symbol>
+    <symbol id="i-brick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="14" rx="1"/>
+      <path d="M3.5 9.6h17M3.5 14.3h17"/>
+      <path d="M9 5v4.6M15 9.6v4.7M9 14.3V19"/>
+    </symbol>
+    <symbol id="i-column" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 3h16"/>
+      <path d="M4 21h16"/>
+      <path d="M6 5.2v13.6M9.3 5.2v13.6M12 5.2v13.6M14.7 5.2v13.6M18 5.2v13.6"/>
+    </symbol>
+    <symbol id="i-window" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="3" width="16" height="18" rx="1.5"/>
+      <path d="M12 3v18M4 12h16"/>
+    </symbol>
+    <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8" cy="15" r="4"/>
+      <path d="M11 12l9-9"/>
+      <path d="M16.2 6.8l3 3"/>
+      <path d="M13.2 9.8l2.5 2.5"/>
+    </symbol>
+    <symbol id="i-lift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="3" width="14" height="18" rx="2"/>
+      <path d="M10 9.5l2-2 2 2"/>
+      <path d="M10 14.5l2 2 2-2"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l7 3v5c0 5-3.2 8.5-7 10-3.8-1.5-7-5-7-10V6l7-3z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/>
+    </symbol>
+    <symbol id="i-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="9" r="6"/>
+      <path d="M12 15v6"/>
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+      <circle cx="12" cy="12" r="4.2"/>
+      <circle cx="17" cy="7" r="0.5" fill="currentColor" stroke="none"/>
+    </symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.4 11.2L21 3.6 13.4 21.2l-2.9-7.3-7.1-2.7z"/>
+      <path d="M11 13.9l3.6-3.6"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6h16M4 12h16M4 18h16"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 5l7 7-7 7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="siteHeader">
+  <div class="container">
+    <a href="#top" class="brand">
+      <span class="logo-badge"><img src="images/logo-leaf.png" alt="Denov Eco Garden logo"></span>
+      <span>DENOV ECO GARDEN</span>
+    </a>
+    <nav id="siteNavDesktop" class="desktop-only-nav">
+      <ul>
+        <li><a href="#about">Loyiha haqida</a></li>
+        <li><a href="#quality">Qurilish sifati</a></li>
+        <li><a href="#amenities">Qulayliklar</a></li>
+        <li><a href="#gallery">Galereya</a></li>
+        <li><a href="#contact">Bog'lanish</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:+998555195000" class="header-phone"><svg class="ic" width="18" height="18"><use href="#i-phone"/></svg> +998 55 519 50 00</a>
+      <a href="https://t.me/oscar_building" target="_blank" rel="noopener" class="header-phone" title="Telegram kanal"><svg class="ic" width="19" height="19"><use href="#i-send"/></svg></a>
+      <a href="tel:+998555195000" class="btn btn-primary"><svg class="ic" width="16" height="16"><use href="#i-phone"/></svg><span class="btn-label">Qo'ng'iroq qilish</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menyu">
+        <svg class="ic icon-menu" width="22" height="22"><use href="#i-menu"/></svg>
+        <svg class="ic icon-close" width="20" height="20"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav id="siteNav">
+  <ul>
+    <li><a href="#about"><svg class="ic nav-ic" width="18" height="18"><use href="#i-pin"/></svg><span>Loyiha haqida</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
+    <li><a href="#quality"><svg class="ic nav-ic" width="18" height="18"><use href="#i-crane"/></svg><span>Qurilish sifati</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
+    <li><a href="#amenities"><svg class="ic nav-ic" width="18" height="18"><use href="#i-tree"/></svg><span>Qulayliklar</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
+    <li><a href="#gallery"><svg class="ic nav-ic" width="18" height="18"><use href="#i-camera"/></svg><span>Galereya</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
+    <li><a href="#contact"><svg class="ic nav-ic" width="18" height="18"><use href="#i-phone"/></svg><span>Bog'lanish</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
+  </ul>
+  <div class="nav-foot">
+    <a href="tel:+998555195000" class="btn btn-primary" style="width:100%;justify-content:center;"><svg class="ic" width="17" height="17"><use href="#i-phone"/></svg><span class="btn-label">+998 55 519 50 00</span></a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="images/hero-aerial.jpg" alt="Denov Eco Garden turar-joy majmuasi"></div>
+  <div class="container hero-content">
+    <h1>Denov Eco Garden</h1>
+    <div class="hero-divider"></div>
+    <p class="lead">Denov shahrida yashillik bag'rida qad ko'targan, 1500 xonadonli standart klassdagi zamonaviy turar-joy majmuasi.</p>
+    <div class="hero-tags">
+      <span><svg class="ic" width="16" height="16"><use href="#i-pin"/></svg> Denov, Lochin MFY</span>
+      <span><svg class="ic" width="16" height="16"><use href="#i-building"/></svg> 1500 xonadon</span>
+      <span><svg class="ic" width="16" height="16"><use href="#i-car"/></svg> 600 o'rinli parkovka</span>
+      <span><svg class="ic" width="16" height="16"><use href="#i-calendar"/></svg> 24 oyda topshiriladi</span>
+    </div>
+    <div class="hero-actions">
+      <a href="tel:+998555195000" class="btn btn-primary"><svg class="ic" width="18" height="18"><use href="#i-phone"/></svg> Qo'ng'iroq qilish</a>
+      <a href="https://www.instagram.com/denov_ecogarden/" target="_blank" rel="noopener" class="btn btn-outline btn-instagram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-camera"/></svg></span> Instagram sahifamiz</a>
+      <a href="https://t.me/oscar_building" target="_blank" rel="noopener" class="btn btn-outline btn-telegram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-send"/></svg></span> Telegram kanal</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Pastga</span><span class="line"></span></div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">Joylashuvi</span>
+      <h2>Denovning eng qulay nuqtasida</h2>
+      <p>Denov Eco Garden turar-joy majmuasi <b>Denov tumani, Lochin MFY, U.Nosir ko'chasida</b> joylashgan. Xalq orasida bu hudud <b>"Sassiq ko'l chorrahasi"</b> nomi bilan tanilgan.</p>
+      <p>Mo'ljal: <b>Denov tekstil fabrikasi ro'parasida</b>, Kia avtosaloni orqa tomonida — tekstil fabrika binosi to'g'ridan-to'g'ri ko'rinib turadi.</p>
+      <div class="landmark-card" style="display:flex;gap:14px;align-items:flex-start;">
+        <svg class="ic" width="20" height="20" style="color:var(--green);margin-top:2px;"><use href="#i-compass"/></svg>
+        <span><b>Yo'nalish uchun mo'ljallar:</b> Sassiq ko'l chorrahasi → Denov tekstil fabrikasi (ro'parasida) → Kia avtosaloni (orqa tomoni)</span>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="images/facade-day.jpg" alt="Denov Eco Garden binolari, kunduzgi ko'rinish">
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container stats-grid">
+    <div><div class="num">1500</div><div class="lbl">Xonadon</div></div>
+    <div><div class="num">600</div><div class="lbl">O'rinli parkovka</div></div>
+    <div><div class="num">24 oy</div><div class="lbl">Qurilish muddati</div></div>
+    <div><div class="num">Standart</div><div class="lbl">Klass</div></div>
+  </div>
+</section>
+
+<section class="quality" id="quality">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Qurilish sifati</span>
+      <h2>Zilzilabardosh va uzoq umr ko'radigan qurilish</h2>
+      <p>Har bir bino zamonaviy standartlar asosida, sifatli xomashyolardan qad ko'tarmoqda.</p>
+    </div>
+    <div class="grid-cards">
+      <div class="card">
+        <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-crane"/></svg></div>
+        <h3>Monolit karkas + gazoblok</h3>
+        <p>Bino konstruksiyasi monolit karkasda, to'ldiruvchi devorlar uchun gazoblok ishlatiladi — issiqni yaxshi saqlaydi va yengil, mustahkam devorlar hosil qiladi.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-brick"/></svg></div>
+        <h3>400 markali beton, A400 armatura</h3>
+        <p>Qurilishda 400 markagacha beton va A400 armatura qo'llaniladi — zilzilaga bardoshli, issiq va sovuqqa chidamli konstruksiya ta'minlanadi.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-column"/></svg></div>
+        <h3>Travertin fasad</h3>
+        <p>Binolar tashqi ko'rinishi premium travertin material bilan qoplanadi — zamonaviy va hashamatli tashqi ko'rinish uchun.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-window"/></svg></div>
+        <h3>Yuqori sifatli derazalar</h3>
+        <p>Deraza konstruksiyalari uchun eng sifatli va ishonchli kompaniyalardan buyurtma beriladi — issiqlik va shovqin izolyatsiyasi yuqori darajada.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-key"/></svg></div>
+        <h3>Remontsiz topshiriladi</h3>
+        <p>Xonadonlar "qora" (remontsiz) holatda topshiriladi — ichki dizaynni o'zingiz xohlagan uslubda qurish imkoniyati.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-calendar-check"/></svg></div>
+        <h3>24 oy qurilish muddati</h3>
+        <p>Shartnoma asosida loyiha 24 oy ichida qurib, mijozlarga topshiriladi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amenities" id="amenities">
+  <div class="container">
+    <div class="amen-wrap">
+      <div>
+        <span class="eyebrow on-dark">Qulayliklar</span>
+        <h2 style="color:#fff;font-size:clamp(2rem,3.6vw,2.6rem);margin:14px 0 26px;">Hayotingizni qulay qiladigan barcha sharoitlar</h2>
+        <div class="amen-list">
+          <div class="amen-item">
+            <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-car"/></svg></div>
+            <div><h4>600 o'rinli parkovka</h4><p>Barcha turar-joy egalari uchun yetarlicha parkovka joyi ajratilgan.</p></div>
+          </div>
+          <div class="amen-item">
+            <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-lift"/></svg></div>
+            <div><h4>Har podezdda 2 ta lift</h4><p>Shundan bittasi yuk ko'tarish uchun mo'ljallangan — ko'chish va og'ir buyumlarni tashish qulay.</p></div>
+          </div>
+          <div class="amen-item">
+            <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-shield"/></svg></div>
+            <div><h4>24/7 qo'riqlash tizimi</h4><p>Majmua yagona yopiq hudud sifatida tashkil etilgani uchun doimiy qo'riqlash joriy etiladi.</p></div>
+          </div>
+          <div class="amen-item">
+            <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-bolt"/></svg></div>
+            <div><h4>Generator va quyosh panellari</h4><p>Svet o'chib qolgan taqdirda ham qo'shimcha generator va quyosh panellari liftlar ishlashini ta'minlaydi.</p></div>
+          </div>
+          <div class="amen-item">
+            <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-tree"/></svg></div>
+            <div><h4>Yashil hovli va bolalar maydonchasi</h4><p>Ko'p qavatli avtoturargoh ustida tashkil etilgan yashil hudud, pergolalar va bolalar o'yin maydonchalari.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="amen-img">
+        <img src="images/courtyard.jpg" alt="Denov Eco Garden yashil hovlisi va bolalar maydonchasi">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="timeline">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Qurilish jadvali</span>
+      <h2>Shartnoma bo'yicha aniq muddat</h2>
+    </div>
+    <div class="tl-wrap">
+      <div class="tl-box">
+        <div class="big">24 <span>oy</span></div>
+        <div class="cap">Shartnoma imzolangan kundan e'tiboran topshirish muddati</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Galereya</span>
+      <h2>Loyiha vizuallari</h2>
+    </div>
+    <div class="gal-grid">
+      <a href="images/facade-evening.jpg" target="_blank" rel="noopener"><img src="images/facade-evening.jpg" alt="Denov Eco Garden kechki fasad ko'rinishi"></a>
+      <a href="images/street-retail.jpg" target="_blank" rel="noopener"><img src="images/street-retail.jpg" alt="Denov Eco Garden birinchi qavat savdo joylari va parkovka"></a>
+      <a href="images/facade-day.jpg" target="_blank" rel="noopener"><img src="images/facade-day.jpg" alt="Denov Eco Garden kunduzgi fasad ko'rinishi"></a>
+      <a href="images/courtyard.jpg" target="_blank" rel="noopener"><img src="images/courtyard.jpg" alt="Denov Eco Garden ichki hovli"></a>
+      <a href="images/hero-aerial.jpg" target="_blank" rel="noopener"><img src="images/hero-aerial.jpg" alt="Denov Eco Garden qush parvozi ko'rinishi"></a>
+      <a href="images/facade-evening.jpg" target="_blank" rel="noopener"><img src="images/facade-evening.jpg" alt="Denov Eco Garden kechqurun yoritilgan fasad"></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-bg"><img src="images/street-retail.jpg" alt=""></div>
+  <div class="container cta-inner">
+    <span class="eyebrow on-dark">Bog'lanish</span>
+    <h2>O'zingizga mos xonadonni band qiling</h2>
+    <p>Narxlar, to'lov sharoitlari va bo'sh xonadonlar haqida batafsil ma'lumot olish uchun biz bilan bog'laning.</p>
+    <div class="cta-actions">
+      <a href="tel:+998555195000" class="btn btn-primary"><svg class="ic" width="18" height="18"><use href="#i-phone"/></svg> +998 55 519 50 00</a>
+      <a href="https://www.instagram.com/denov_ecogarden/" target="_blank" rel="noopener" class="btn btn-outline btn-instagram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-camera"/></svg></span> Instagram</a>
+      <a href="https://t.me/oscar_building" target="_blank" rel="noopener" class="btn btn-outline btn-telegram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-send"/></svg></span> Telegram</a>
+    </div>
+    <div class="contact-grid">
+      <div class="box"><div class="lbl">Manzil</div><div class="val">Denov tumani, Lochin MFY, U.Nosir ko'chasi</div></div>
+      <div class="box"><div class="lbl">Mo'ljal</div><div class="val">Sassiq ko'l chorrahasi, Denov tekstil fabrikasi ro'parasi</div></div>
+      <div class="box"><div class="lbl">Qurilish kompaniyasi</div><div class="val">Oskar Building</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-brand"><span class="logo-badge"><img src="images/logo-leaf.png" alt=""></span>DENOV ECO GARDEN</div>
+    <div>Denov / 1500 xonadon &copy; 2026. Barcha huquqlar himoyalangan.</div>
+  </div>
+</footer>
+
+<a href="tel:+998555195000" class="float-call" title="Qo'ng'iroq qilish"><svg class="ic" width="24" height="24"><use href="#i-phone"/></svg></a>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  const nav = document.getElementById('siteNav');
+  const toggle = document.getElementById('navToggle');
+  const backdrop = document.getElementById('navBackdrop');
+  function openNav(){
+    nav.classList.add('open');
+    toggle.classList.add('is-open');
+    backdrop.classList.add('show');
+  }
+  function closeNav(){
+    nav.classList.remove('open');
+    toggle.classList.remove('is-open');
+    backdrop.classList.remove('show');
+  }
+  toggle.addEventListener('click', () => nav.classList.contains('open') ? closeNav() : openNav());
+  backdrop.addEventListener('click', closeNav);
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+  window.addEventListener('keydown', e => { if(e.key === 'Escape') closeNav(); });
+</script>
+
+</body>
+</html>
