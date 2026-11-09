@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DENOV ECO GARDEN | Yashillik bag'ridagi yangi hayot</title>
-<meta name="description" content="DENOV ECO GARDEN — Denov tumani, Lochin MFY, U.Nosir ko'chasida qad ko'tarayotgan 1500 xonadonli standart klassdagi zamonaviy turar-joy majmuasi.">
+<title>DENOV ECO GARDEN | Yashillik bag’ridagi yangi hayot</title>
+<meta name="description" content="DENOV ECO GARDEN — Denov tumani, Lochin MFY, U.Nosir ko’chasida qad ko’tarayotgan 1500 xonadonli standart klassdagi zamonaviy turar-joy majmuasi.">
 <link rel="icon" href="images/favicon-green.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
     line-height:1.6;
     overflow-x:hidden;
   }
-  h1,h2,h3,h4{font-family:'Poppins',sans-serif;letter-spacing:.02em;}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;letter-spacing:.02em;line-height:1.15;}
   img{max-width:100%;display:block;}
   a{text-decoration:none;color:inherit;}
   .container{max-width:1180px;margin:0 auto;padding:0 24px;}
@@ -158,7 +158,7 @@
     text-transform:uppercase;
     margin:18px 0 22px;
   }
-  .hero-divider{width:90px;height:3px;background:var(--beige);margin-bottom:22px;}
+  .hero-divider{width:100%;max-width:560px;height:3px;background:var(--beige);margin-bottom:22px;}
   .hero p.lead{
     font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:600;max-width:560px;color:#fff;margin-bottom:34px;
     text-shadow:0 2px 18px rgba(0,0,0,.65), 0 1px 3px rgba(0,0,0,.9);
@@ -170,18 +170,12 @@
     padding:8px 18px;border-radius:50px;font-size:.85rem;font-weight:600;letter-spacing:.04em;
   }
   .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-  .scroll-cue{
-    position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
-    z-index:1;color:#fff;opacity:.7;font-size:.8rem;display:flex;flex-direction:column;align-items:center;gap:8px;
-  }
-  .scroll-cue .line{width:1px;height:36px;background:#fff;animation:scrolldown 1.8s infinite;}
-  @keyframes scrolldown{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}50.1%{transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
 
   /* ABOUT / LOCATION */
   .about{background:var(--cream);}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-  .about h2{font-size:clamp(2rem,3.6vw,2.8rem);color:var(--dark);margin:14px 0 20px;font-weight:700;}
-  .about p{color:#4a443f;margin-bottom:16px;font-size:1.02rem;}
+  .about h2{font-size:clamp(2rem,3.6vw,2.8rem);color:var(--dark);margin:8px 0 14px;font-weight:700;}
+  .about p{color:#4a443f;margin-bottom:14px;font-size:1.02rem;}
   .landmark-card{
     background:#fff;border-left:4px solid var(--green);border-radius:10px;
     padding:20px 24px;margin-top:22px;box-shadow:0 10px 30px rgba(20,61,50,.07);
@@ -483,13 +477,12 @@
         <li><a href="#quality">Qurilish sifati</a></li>
         <li><a href="#amenities">Qulayliklar</a></li>
         <li><a href="#gallery">Galereya</a></li>
-        <li><a href="#contact">Bog'lanish</a></li>
+        <li><a href="#contact">Bog’lanish</a></li>
       </ul>
     </nav>
     <div class="header-cta">
       <a href="tel:+998555195000" class="header-phone"><svg class="ic" width="18" height="18"><use href="#i-phone"/></svg> +998 55 519 50 00</a>
       <a href="https://t.me/oscar_building" target="_blank" rel="noopener" class="header-phone" title="Telegram kanal"><svg class="ic" width="19" height="19"><use href="#i-send"/></svg></a>
-      <a href="tel:+998555195000" class="btn btn-primary"><svg class="ic" width="16" height="16"><use href="#i-phone"/></svg><span class="btn-label">Qo'ng'iroq qilish</span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Menyu">
         <svg class="ic icon-menu" width="22" height="22"><use href="#i-menu"/></svg>
         <svg class="ic icon-close" width="20" height="20"><use href="#i-close"/></svg>
@@ -504,7 +497,7 @@
     <li><a href="#quality"><svg class="ic nav-ic" width="18" height="18"><use href="#i-crane"/></svg><span>Qurilish sifati</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
     <li><a href="#amenities"><svg class="ic nav-ic" width="18" height="18"><use href="#i-tree"/></svg><span>Qulayliklar</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
     <li><a href="#gallery"><svg class="ic nav-ic" width="18" height="18"><use href="#i-camera"/></svg><span>Galereya</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
-    <li><a href="#contact"><svg class="ic nav-ic" width="18" height="18"><use href="#i-phone"/></svg><span>Bog'lanish</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
+    <li><a href="#contact"><svg class="ic nav-ic" width="18" height="18"><use href="#i-phone"/></svg><span>Bog’lanish</span><svg class="ic nav-chevron" width="16" height="16"><use href="#i-chevron"/></svg></a></li>
   </ul>
   <div class="nav-foot">
     <a href="tel:+998555195000" class="btn btn-primary" style="width:100%;justify-content:center;"><svg class="ic" width="17" height="17"><use href="#i-phone"/></svg><span class="btn-label">+998 55 519 50 00</span></a>
@@ -516,20 +509,14 @@
   <div class="container hero-content">
     <h1>Denov Eco Garden</h1>
     <div class="hero-divider"></div>
-    <p class="lead">Denov shahrida yashillik bag'rida qad ko'targan, 1500 xonadonli standart klassdagi zamonaviy turar-joy majmuasi.</p>
+    <p class="lead">Denov shahrida yashillik bag’rida qad ko’targan, 1500 xonadonli standart klassdagi zamonaviy turar-joy majmuasi.</p>
     <div class="hero-tags">
       <span><svg class="ic" width="16" height="16"><use href="#i-pin"/></svg> Denov, Lochin MFY</span>
       <span><svg class="ic" width="16" height="16"><use href="#i-building"/></svg> 1500 xonadon</span>
-      <span><svg class="ic" width="16" height="16"><use href="#i-car"/></svg> 600 o'rinli parkovka</span>
+      <span><svg class="ic" width="16" height="16"><use href="#i-car"/></svg> 600 o’rinli parkovka</span>
       <span><svg class="ic" width="16" height="16"><use href="#i-calendar"/></svg> 24 oyda topshiriladi</span>
     </div>
-    <div class="hero-actions">
-      <a href="tel:+998555195000" class="btn btn-primary"><svg class="ic" width="18" height="18"><use href="#i-phone"/></svg> Qo'ng'iroq qilish</a>
-      <a href="https://www.instagram.com/denov_ecogarden/" target="_blank" rel="noopener" class="btn btn-outline btn-instagram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-camera"/></svg></span> Instagram sahifamiz</a>
-      <a href="https://t.me/oscar_building" target="_blank" rel="noopener" class="btn btn-outline btn-telegram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-send"/></svg></span> Telegram kanal</a>
-    </div>
   </div>
-  <div class="scroll-cue"><span>Pastga</span><span class="line"></span></div>
 </section>
 
 <section class="about" id="about">
@@ -537,15 +524,15 @@
     <div>
       <span class="eyebrow">Joylashuvi</span>
       <h2>Denovning eng qulay nuqtasida</h2>
-      <p>Denov Eco Garden turar-joy majmuasi <b>Denov tumani, Lochin MFY, U.Nosir ko'chasida</b> joylashgan. Xalq orasida bu hudud <b>"Sassiq ko'l chorrahasi"</b> nomi bilan tanilgan.</p>
-      <p>Mo'ljal: <b>Denov tekstil fabrikasi ro'parasida</b>, Kia avtosaloni orqa tomonida — tekstil fabrika binosi to'g'ridan-to'g'ri ko'rinib turadi.</p>
+      <p>Denov Eco Garden turar-joy majmuasi <b>Denov tumani, Lochin MFY, U.Nosir ko’chasida</b> joylashgan. Xalq orasida bu hudud <b>"Sassiq ko’l chorrahasi"</b> nomi bilan tanilgan.</p>
+      <p>Mo’ljal: <b>Denov tekstil fabrikasi ro’parasida</b>, Kia avtosaloni orqa tomonida — tekstil fabrika binosi to’g’ridan-to’g’ri ko’rinib turadi.</p>
       <div class="landmark-card" style="display:flex;gap:14px;align-items:flex-start;">
         <svg class="ic" width="20" height="20" style="color:var(--green);margin-top:2px;"><use href="#i-compass"/></svg>
-        <span><b>Yo'nalish uchun mo'ljallar:</b> Sassiq ko'l chorrahasi → Denov tekstil fabrikasi (ro'parasida) → Kia avtosaloni (orqa tomoni)</span>
+        <span><b>Yo’nalish uchun mo’ljallar:</b> Sassiq ko’l chorrahasi → Denov tekstil fabrikasi (ro’parasida) → Kia avtosaloni (orqa tomoni)</span>
       </div>
     </div>
     <div class="about-img">
-      <img src="images/facade-day.jpg" alt="Denov Eco Garden binolari, kunduzgi ko'rinish">
+      <img src="images/facade-day.jpg" alt="Denov Eco Garden binolari, kunduzgi ko’rinish">
     </div>
   </div>
 </section>
@@ -553,7 +540,7 @@
 <section class="stats">
   <div class="container stats-grid">
     <div><div class="num">1500</div><div class="lbl">Xonadon</div></div>
-    <div><div class="num">600</div><div class="lbl">O'rinli parkovka</div></div>
+    <div><div class="num">600</div><div class="lbl">O’rinli parkovka</div></div>
     <div><div class="num">24 oy</div><div class="lbl">Qurilish muddati</div></div>
     <div><div class="num">Standart</div><div class="lbl">Klass</div></div>
   </div>
@@ -563,24 +550,24 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Qurilish sifati</span>
-      <h2>Zilzilabardosh va uzoq umr ko'radigan qurilish</h2>
-      <p>Har bir bino zamonaviy standartlar asosida, sifatli xomashyolardan qad ko'tarmoqda.</p>
+      <h2>Zilzilabardosh va uzoq umr ko’radigan qurilish</h2>
+      <p>Har bir bino zamonaviy standartlar asosida, sifatli xomashyolardan qad ko’tarmoqda.</p>
     </div>
     <div class="grid-cards">
       <div class="card">
         <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-crane"/></svg></div>
         <h3>Monolit karkas + gazoblok</h3>
-        <p>Bino konstruksiyasi monolit karkasda, to'ldiruvchi devorlar uchun gazoblok ishlatiladi — issiqni yaxshi saqlaydi va yengil, mustahkam devorlar hosil qiladi.</p>
+        <p>Bino konstruksiyasi monolit karkasda, to’ldiruvchi devorlar uchun gazoblok ishlatiladi — issiqni yaxshi saqlaydi va yengil, mustahkam devorlar hosil qiladi.</p>
       </div>
       <div class="card">
         <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-brick"/></svg></div>
         <h3>400 markali beton, A400 armatura</h3>
-        <p>Qurilishda 400 markagacha beton va A400 armatura qo'llaniladi — zilzilaga bardoshli, issiq va sovuqqa chidamli konstruksiya ta'minlanadi.</p>
+        <p>Qurilishda 400 markagacha beton va A400 armatura qo’llaniladi — zilzilaga bardoshli, issiq va sovuqqa chidamli konstruksiya ta’minlanadi.</p>
       </div>
       <div class="card">
         <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-column"/></svg></div>
         <h3>Travertin fasad</h3>
-        <p>Binolar tashqi ko'rinishi premium travertin material bilan qoplanadi — zamonaviy va hashamatli tashqi ko'rinish uchun.</p>
+        <p>Binolar tashqi ko’rinishi premium travertin material bilan qoplanadi — zamonaviy va hashamatli tashqi ko’rinish uchun.</p>
       </div>
       <div class="card">
         <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-window"/></svg></div>
@@ -590,7 +577,7 @@
       <div class="card">
         <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-key"/></svg></div>
         <h3>Remontsiz topshiriladi</h3>
-        <p>Xonadonlar "qora" (remontsiz) holatda topshiriladi — ichki dizaynni o'zingiz xohlagan uslubda qurish imkoniyati.</p>
+        <p>Xonadonlar "qora" (remontsiz) holatda topshiriladi — ichki dizaynni o’zingiz xohlagan uslubda qurish imkoniyati.</p>
       </div>
       <div class="card">
         <div class="icon"><svg class="ic" width="26" height="26"><use href="#i-calendar-check"/></svg></div>
@@ -610,23 +597,23 @@
         <div class="amen-list">
           <div class="amen-item">
             <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-car"/></svg></div>
-            <div><h4>600 o'rinli parkovka</h4><p>Barcha turar-joy egalari uchun yetarlicha parkovka joyi ajratilgan.</p></div>
+            <div><h4>600 o’rinli parkovka</h4><p>Barcha turar-joy egalari uchun yetarlicha parkovka joyi ajratilgan.</p></div>
           </div>
           <div class="amen-item">
             <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-lift"/></svg></div>
-            <div><h4>Har podezdda 2 ta lift</h4><p>Shundan bittasi yuk ko'tarish uchun mo'ljallangan — ko'chish va og'ir buyumlarni tashish qulay.</p></div>
+            <div><h4>Har podezdda 2 ta lift</h4><p>Shundan bittasi yuk ko’tarish uchun mo’ljallangan — ko’chish va og’ir buyumlarni tashish qulay.</p></div>
           </div>
           <div class="amen-item">
             <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-shield"/></svg></div>
-            <div><h4>24/7 qo'riqlash tizimi</h4><p>Majmua yagona yopiq hudud sifatida tashkil etilgani uchun doimiy qo'riqlash joriy etiladi.</p></div>
+            <div><h4>24/7 qo’riqlash tizimi</h4><p>Majmua yagona yopiq hudud sifatida tashkil etilgani uchun doimiy qo’riqlash joriy etiladi.</p></div>
           </div>
           <div class="amen-item">
             <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-bolt"/></svg></div>
-            <div><h4>Generator va quyosh panellari</h4><p>Svet o'chib qolgan taqdirda ham qo'shimcha generator va quyosh panellari liftlar ishlashini ta'minlaydi.</p></div>
+            <div><h4>Generator va quyosh panellari</h4><p>Svet o’chib qolgan taqdirda ham qo’shimcha generator va quyosh panellari liftlar ishlashini ta’minlaydi.</p></div>
           </div>
           <div class="amen-item">
             <div class="dot"><svg class="ic" width="20" height="20"><use href="#i-tree"/></svg></div>
-            <div><h4>Yashil hovli va bolalar maydonchasi</h4><p>Ko'p qavatli avtoturargoh ustida tashkil etilgan yashil hudud, pergolalar va bolalar o'yin maydonchalari.</p></div>
+            <div><h4>Yashil hovli va bolalar maydonchasi</h4><p>Ko’p qavatli avtoturargoh ustida tashkil etilgan yashil hudud, pergolalar va bolalar o’yin maydonchalari.</p></div>
           </div>
         </div>
       </div>
@@ -641,12 +628,12 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Qurilish jadvali</span>
-      <h2>Shartnoma bo'yicha aniq muddat</h2>
+      <h2>Shartnoma bo’yicha aniq muddat</h2>
     </div>
     <div class="tl-wrap">
       <div class="tl-box">
         <div class="big">24 <span>oy</span></div>
-        <div class="cap">Shartnoma imzolangan kundan e'tiboran topshirish muddati</div>
+        <div class="cap">Shartnoma imzolangan kundan e’tiboran topshirish muddati</div>
       </div>
     </div>
   </div>
@@ -656,15 +643,14 @@
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Galereya</span>
-      <h2>Loyiha vizuallari</h2>
+      <h2>Loyiha ko’rinishi</h2>
     </div>
     <div class="gal-grid">
-      <a href="images/facade-evening.jpg" target="_blank" rel="noopener"><img src="images/facade-evening.jpg" alt="Denov Eco Garden kechki fasad ko'rinishi"></a>
+      <a href="images/facade-evening.jpg" target="_blank" rel="noopener"><img src="images/facade-evening.jpg" alt="Denov Eco Garden kechki fasad ko’rinishi"></a>
       <a href="images/street-retail.jpg" target="_blank" rel="noopener"><img src="images/street-retail.jpg" alt="Denov Eco Garden birinchi qavat savdo joylari va parkovka"></a>
-      <a href="images/facade-day.jpg" target="_blank" rel="noopener"><img src="images/facade-day.jpg" alt="Denov Eco Garden kunduzgi fasad ko'rinishi"></a>
+      <a href="images/facade-day.jpg" target="_blank" rel="noopener"><img src="images/facade-day.jpg" alt="Denov Eco Garden kunduzgi fasad ko’rinishi"></a>
       <a href="images/courtyard.jpg" target="_blank" rel="noopener"><img src="images/courtyard.jpg" alt="Denov Eco Garden ichki hovli"></a>
-      <a href="images/hero-aerial.jpg" target="_blank" rel="noopener"><img src="images/hero-aerial.jpg" alt="Denov Eco Garden qush parvozi ko'rinishi"></a>
-      <a href="images/facade-evening.jpg" target="_blank" rel="noopener"><img src="images/facade-evening.jpg" alt="Denov Eco Garden kechqurun yoritilgan fasad"></a>
+      <a href="images/hero-aerial.jpg" target="_blank" rel="noopener"><img src="images/hero-aerial.jpg" alt="Denov Eco Garden qush parvozi ko’rinishi"></a>
     </div>
   </div>
 </section>
@@ -672,17 +658,17 @@
 <section class="cta" id="contact">
   <div class="cta-bg"><img src="images/street-retail.jpg" alt=""></div>
   <div class="container cta-inner">
-    <span class="eyebrow on-dark">Bog'lanish</span>
-    <h2>O'zingizga mos xonadonni band qiling</h2>
-    <p>Narxlar, to'lov sharoitlari va bo'sh xonadonlar haqida batafsil ma'lumot olish uchun biz bilan bog'laning.</p>
+    <span class="eyebrow on-dark">Bog’lanish</span>
+    <h2>O’zingizga mos xonadonni band qiling</h2>
+    <p>Narxlar, to’lov sharoitlari va bo’sh xonadonlar haqida batafsil ma’lumot olish uchun biz bilan bog’laning.</p>
     <div class="cta-actions">
       <a href="tel:+998555195000" class="btn btn-primary"><svg class="ic" width="18" height="18"><use href="#i-phone"/></svg> +998 55 519 50 00</a>
       <a href="https://www.instagram.com/denov_ecogarden/" target="_blank" rel="noopener" class="btn btn-outline btn-instagram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-camera"/></svg></span> Instagram</a>
       <a href="https://t.me/oscar_building" target="_blank" rel="noopener" class="btn btn-outline btn-telegram"><span class="ic-chip"><svg class="ic" width="16" height="16"><use href="#i-send"/></svg></span> Telegram</a>
     </div>
     <div class="contact-grid">
-      <div class="box"><div class="lbl">Manzil</div><div class="val">Denov tumani, Lochin MFY, U.Nosir ko'chasi</div></div>
-      <div class="box"><div class="lbl">Mo'ljal</div><div class="val">Sassiq ko'l chorrahasi, Denov tekstil fabrikasi ro'parasi</div></div>
+      <div class="box"><div class="lbl">Manzil</div><div class="val">Denov tumani, Lochin MFY, U.Nosir ko’chasi</div></div>
+      <div class="box"><div class="lbl">Mo’ljal</div><div class="val">Sassiq ko’l chorrahasi, Denov tekstil fabrikasi ro’parasi</div></div>
       <div class="box"><div class="lbl">Qurilish kompaniyasi</div><div class="val">Oskar Building</div></div>
     </div>
   </div>
@@ -695,7 +681,7 @@
   </div>
 </footer>
 
-<a href="tel:+998555195000" class="float-call" title="Qo'ng'iroq qilish"><svg class="ic" width="24" height="24"><use href="#i-phone"/></svg></a>
+<a href="tel:+998555195000" class="float-call" title="Qo’ng’iroq qilish"><svg class="ic" width="24" height="24"><use href="#i-phone"/></svg></a>
 
 <script>
   const header = document.getElementById('siteHeader');
